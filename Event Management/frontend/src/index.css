@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --accent: #3b82f6;
+}
+
+/* apply fonts */
+html, body, #root {
+  height: 100%;
+  font-family: var(--font-sans);
+}
+
+/* hero and overlays */
+.bg-hero { background-size: cover; background-position: center; background-repeat: no-repeat; position: relative; }
+.bg-overlay::before{ content:''; position:absolute; inset:0; background: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.35) 100%); z-index:0; }
+.hero-content { position: relative; z-index: 10; }
+
+/* Glass card */
+.card-glass { background: rgba(255,255,255,0.7); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,0.7); }
+
+/* Accent btn */
+.btn-accent { @apply bg-blue-600 text-white font-semibold rounded-lg px-4 py-2 shadow-md hover:bg-blue-700; }
+
+/* container */
+.page-container { max-width: 1200px; margin-left:auto; margin-right:auto; padding-left:1rem; padding-right:1rem; }
+
+/* hero height */
+.hero-height { height: 52vh; }
+@media (min-width:1024px) { .hero-height { height: 56vh; } }
